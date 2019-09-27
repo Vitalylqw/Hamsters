@@ -7,7 +7,7 @@ class Game():
     y_n = 4  # Кол. строк в игре
 
     def __init__(self):
-        self.hamsters=[Hamster(self.x_n,self.y_n) for i in range(self.hamsters_count)]
+        self.hamsters=[Hamster(i,self.x_n,self.y_n) for i in range(self.hamsters_count)]
         self.player=Player()
 
     def add_point(self,position,name,li_map):
