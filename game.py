@@ -59,3 +59,5 @@ class Game():
             elif command=='q':
                 print('Game over')
                 break
+game=Game()
+game.start()
