@@ -47,6 +47,10 @@ class Game():
         else:
             print('Вы ввели не корректные данные')
             return False
+        self.on_move()
+
+    def on_move(self):
+        pass
 
     def start(self):
         self.render_map()
