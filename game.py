@@ -27,7 +27,7 @@ class Game():
         for ham in self.hamsters:
             x=ham.position[0]
             y=ham.position[1]
-            li_map=self.add_point([x,y],'H',li_map)
+            li_map=self.add_point([x,y],str(ham.hid+1),li_map)
         print('\n'.join(li_map))
 
     def move_player(self,destination):
