@@ -77,7 +77,8 @@ class Game():
                 self.move_player(command)
                 self.render_map()
             elif command=='q':
-                print('Game Over')
                 self.gameon=False
+        else:
+            print('Game Over')
 game=Game()
 game.start()
