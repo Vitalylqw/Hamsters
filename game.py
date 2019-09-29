@@ -5,7 +5,7 @@ class Game():
     hamsters_count=4 # Кол. Хомяков в игре
     x_n = 4  # Кол. столбцов в игре
     y_n = 4  # Кол. строк в игре
-
+    gameon=True
     def __init__(self):
         self.hamsters=[Hamster(i,self.x_n,self.y_n) for i in range(self.hamsters_count)]
         self.player=Player()
@@ -68,14 +68,14 @@ class Game():
 
     def start(self):
         self.render_map()
-        while True:
+        while self.gameon:
             print("a- направо, d налево, w вверх, s вниз, q - выход")
             command=input("Ведите команду: ")
             if command in ['a','d','w','s']:
                 self.move_player(command)
                 self.render_map()
             elif command=='q':
-                print('Game over')
-                break
+                print('Game Over')
+                self.gameon=False
 game=Game()
 game.start()

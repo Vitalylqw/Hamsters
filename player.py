@@ -1,4 +1,6 @@
 class Player:
-    health=100
+    health=10
     default_damage=10
     position=[0,0]
+    def was_hit(self):
+        self.health-=1
