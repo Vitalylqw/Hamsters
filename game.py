@@ -52,6 +52,13 @@ class Game():
     def on_move(self):
         pass
 
+    def check_hamster(self,coords):
+        for h in self.hamsters:
+            if h.position==coords:
+                return str(h.hid)
+                break
+        return False
+
     def start(self):
         self.render_map()
         while True:
