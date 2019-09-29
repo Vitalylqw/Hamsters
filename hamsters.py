@@ -10,7 +10,7 @@ class Hamster:
 
     def on_shot(self,hamsters):
         self.helth-=1
-        print(self.hid, 'was kiled')
+        print(self.hid+1, 'was kiled')
         hamsters.remove(self)
 
 
