@@ -53,6 +53,8 @@ class Game():
     def on_move(self,old_position):
         hamster=self.check_hamster(self.player.position)
         if hamster:
+            if not self.player.was_hit():
+                self.gameon=False
             if not hamster.on_shot(self.hamsters):
                 self.player.position=old_position
 
