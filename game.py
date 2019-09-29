@@ -71,11 +71,13 @@ class Game():
     def start(self):
         self.render_map()
         while self.gameon:
-            print("a- направо, d налево, w вверх, s вниз, q - выход")
+            print("a- направо, d налево, w вверх, s вниз,e -поправить здороье, q - выход")
             command=input("Ведите команду: ")
             if command in ['a','d','w','s']:
                 self.move_player(command)
                 self.render_map()
+            elif command=='e':
+                self.player.wait()
             elif command=='q':
                 self.gameon=False
         else:
