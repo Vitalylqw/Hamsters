@@ -50,12 +50,15 @@ class Game():
         self.on_move()
 
     def on_move(self):
-        pass
+        hamster=self.check_hamster(self.player.position)
+        if hamster:
+            hamster.on_shot(self.hamsters)
+
 
     def check_hamster(self,coords):
         for h in self.hamsters:
             if h.position==coords:
-                return str(h.hid)
+                return h
                 break
         return False
 
