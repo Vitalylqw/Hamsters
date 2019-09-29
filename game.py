@@ -5,6 +5,7 @@ class Game():
     hamsters_count=4 # Кол. Хомяков в игре
     x_n = 4  # Кол. столбцов в игре
     y_n = 4  # Кол. строк в игре
+    happy_massage='You are winner'
     gameon=True
     def __init__(self):
         self.hamsters=[Hamster(i,self.x_n,self.y_n) for i in range(self.hamsters_count)]
@@ -71,6 +72,10 @@ class Game():
     def start(self):
         self.render_map()
         while self.gameon:
+            if not self.hamsters:
+                self.gameon=False
+                print(self.happy_massage)
+                break
             print("a- направо, d налево, w вверх, s вниз,e -поправить здороье, q - выход")
             command=input("Ведите команду: ")
             if command in ['a','d','w','s']:
