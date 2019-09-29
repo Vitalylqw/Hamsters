@@ -32,6 +32,7 @@ class Game():
 
     def move_player(self,destination):
         """destination== a,s,w,d"""
+        old_position=[self.player.position[0],self.player.position[1]]
         x_n = self.x_n
         y_n = self.y_n
         x = self.player.position[0]  # Координата героя по х
@@ -47,12 +48,15 @@ class Game():
         else:
             print('Вы ввели не корректные данные')
             return False
-        self.on_move()
+        self.on_move(old_position)
 
-    def on_move(self):
+    def on_move(self,old_position):
         hamster=self.check_hamster(self.player.position)
         if hamster:
-            hamster.on_shot(self.hamsters)
+            if not hamster.on_shot(self.hamsters):
+                self.player.position=old_position
+
+
 
 
     def check_hamster(self,coords):
